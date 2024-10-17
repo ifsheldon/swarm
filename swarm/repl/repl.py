@@ -68,6 +68,9 @@ def run_demo_loop(
 
     while True:
         user_input = input("\033[90mUser\033[0m: ")
+        if user_input.strip().lower() == ":exit":
+            break
+
         messages.append({"role": "user", "content": user_input})
 
         response = client.run(
